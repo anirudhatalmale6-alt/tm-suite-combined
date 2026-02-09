@@ -28,6 +28,8 @@
     "host_permissions": [
         "https://api.distribteportal.com/*",
         "https://distribteportal.com/*",
+        "https://whoerip.com/*",
+        "https://*.whoerip.com/*",
         "<all_urls>"
     ],
     "action": {
@@ -38,7 +40,23 @@
         },
         "default_popup": "popup.html"
     },
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+Shift+X"
+            },
+            "description": "Open Distribte and auto-login"
+        }
+    },
     "content_scripts": [
+        {
+            "matches": [
+                "https://whoerip.com/*",
+                "https://*.whoerip.com/*"
+            ],
+            "js": ["/js/auto-trigger.js"],
+            "run_at": "document_end"
+        },
         {
             "matches": [
                 "https://www.ticketmaster.com/*",
