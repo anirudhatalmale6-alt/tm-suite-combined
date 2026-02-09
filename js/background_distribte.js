@@ -12,8 +12,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       active: true
     });
     sendResponse({ success: true });
+    return true;
   }
-  return true;
 });
 
 // Auto open popup on browser startup for login
