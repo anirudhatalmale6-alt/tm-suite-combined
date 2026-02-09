@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === 'openPopupTab') {
     // Open the popup.html in a new tab for auto-login
     chrome.tabs.create({
-      url: chrome.runtime.getURL('popup.html'),
+      url: chrome.runtime.getURL('popup_distribte.html'),
       active: true
     });
     sendResponse({ success: true });
@@ -21,7 +21,7 @@ chrome.runtime.onStartup.addListener(() => {
   console.log('[Distribte AutoLogin] Browser started, opening popup for login...');
   setTimeout(() => {
     chrome.tabs.create({
-      url: chrome.runtime.getURL('popup.html'),
+      url: chrome.runtime.getURL('popup_distribte.html'),
       active: true
     });
   }, 3000); // Wait 3 seconds for browser to fully load
