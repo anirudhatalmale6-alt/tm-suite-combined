@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      text-align: center;
+    }
+    h3 {
+      margin: 0 0 15px 0;
+      color: #333;
+    }
+    .info {
+      background: #e8f5e9;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 11px;
+      color: #2e7d32;
+    }
+    .status {
+      margin-bottom: 15px;
+      font-size: 12px;
+      color: #666;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      color: white;
+      margin-bottom: 8px;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .btn-primary {
+      background: #4CAF50;
+    }
+    .btn-danger {
+      background: #f44336;
+      font-size: 11px;
+      padding: 8px;
+    }
+    .cleared {
+      color: #4CAF50;
+      font-weight: bold;
+    }
+    .what-clears {
+      margin-top: 15px;
+      text-align: left;
+      font-size: 10px;
+      color: #888;
+    }
+    .what-clears ul {
+      margin: 5px 0;
+      padding-left: 15px;
+    }
+    .divider {
+      margin: 12px 0;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <h3>TM Cleaner</h3>
+
+  <div class="info">
+    Clears cache/data but KEEPS you logged in
+  </div>
+
+  <div class="status" id="status">Checking...</div>
+
+  <button id="clearBtn" class="btn-primary">Clear Data (Stay Logged In)</button>
+
+  <div class="divider"></div>
+
+  <button id="clearAllBtn" class="btn-danger">Clear ALL (Logout Too)</button>
+
+  <div class="what-clears">
+    <strong>What gets cleared:</strong>
+    <ul>
+      <li>Cache & cached storage</li>
+      <li>Local storage & IndexedDB</li>
+      <li>Service workers</li>
+      <li>Non-login cookies (tracking, queue, etc.)</li>
+    </ul>
+    <strong>What stays (when keeping login):</strong>
+    <ul>
+      <li>Authentication cookies</li>
+      <li>Session tokens</li>
+    </ul>
+  </div>
+
+  <script src="/js/tm_cleaner/popup.js"></script>
+</body>
+</html>
